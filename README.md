@@ -15,10 +15,10 @@ As lojas da rede alemã Rossmann, que vendem itens de higiene, comidinhas, coisa
 
 **Fonte:** [ Jornal do Comércio ](https://www.jornaldocomercio.com/_conteudo/especiais/hannover_messe_2019/2019/04/678068-dicas-de-hannover.html)
 
-## 1.1 Contexto de negócio
+### 1.1 Contexto de negócio
 
 Realizar a predição do valor total de vendas diárias das lojas da rede para as próximas seis semanas.
 
-## 1.2 Entendimento do Problema de Negócio
+### 1.2 Entendimento do Problema de Negócio
 
 #### -> ?
