@@ -17,8 +17,8 @@ Nesse banco de dados iremos encontrar 1.017.209 entradas que datam de 01/01/2013
 
 ## 1.2 Entendimento e Desafio do Problema de Negócio
 
-Com milhares de gerentes individuais prevendo vendas com base em seu contexto, a precisão dos resultados podem sofrer muitas variações, e isso prejudicaria na tomada de decisão do time de negócios.<br>
-Diante dessa situação o time de dados ficou encarregado de realizar uma análise e uma previsão, mais precisa possível, para o negócio. 
+Com milhares de gerentes individuais prevendo vendas com base em seu ambiente de trabalho, a precisão dos resultados podem sofrer muitas variações e, isso prejudicaria na tomada de decisão do time de negócios.<br>
+Diante dessa situação o time de dados ficou encarregado de analisar e desenvolver uma solução que seja viável para toda a rede de atendimento. 
 
 
 ## 2. Planejamento prévio
@@ -40,7 +40,7 @@ Diante dessa situação o time de dados ficou encarregado de realizar uma análi
 ## 2.2 Produto final
 
 * Solucionar Insights.
-* Desenvolver uma solução rápida e prática, podendo ser acessada de qualquer lugar e de qualquer dispositivo conectado a internet.
+* Desenvolver uma solução de predição de vendas. Esta, deve ser rápida e prática, podendo ser acessada de qualquer lugar e de qualquer dispositivo conectado a internet.
 
 
 ## 3.0 Estudo do negócio
@@ -150,14 +150,16 @@ As lojas da rede alemã Rossmann, que vendem itens de higiene, comidinhas, coisa
 
 ## 7.0 Modelagem dos dados
 
-Nesta etapa, os dados foram preparados para o início das aplicações dos modelos de machine learning. Foram utilizadas técnicas de Rescaling e Transformation, através de encodings e nature transformation, e também o Boruta para selecionar os melhores atributos para treinar o modelo afim de obter uma melhor acurácia.
+Nesta etapa, os dados foram preparados para o início das aplicações dos modelos de machine learning.<br>
+Foram utilizadas técnicas de Rescaling e Transformation, através de encodings e nature transformation. O pacote Boruta foi aplicado para direcionar quais são os melhores atributos e, dessa maneira, treinar o melhor modelo afim de se obter uma melhor acurácia.
 
 ## 7.1 Machine Learning Modeling
 
-Nesta etapa,foi relizado testes e treinamento em 5 modelos,Random Forest Regressor,XGBoost Regressor, Linear Regression - Lasso, Linear Regressor e Average Model.<br>
-Usamos  o Average Model como base para compararmos os demais modelos  suas respctivas performance e escolha do melhor modelo.<br>
-Também foi aplicada a técnica de Cross Validation para garantir a performance real sobre os dados selecionados.<br>
-A melhor performace encontrada foi do  Random Forest Regressor, porém escolhemos o modelo XGBoost Regressor. A razão dessa escolha é que o XGBoost é um modelo mais leve para operar em produção e não aparesenta diferença significativa de desempenho.
+Nesta etapa, foram relizados testes e treinamentos com cinco modelos: Random Forest Regressor, XGBoost Regressor, Linear Regression (Lasso), Linear Regression e Average Model.<br>
+Utilizei o Average Model como base para fazer comparações com os demais modelos.<br>
+Apliquei a técnica de Cross Validation para garantir a performance real sobre os dados selecionados.<br>
+Em termos de performance, o Random Forest Regressor se saiu melhor, todavia, eu escolhi o modelo XGBoost Regressor.<br>
+A razão dessa escolha é que o XGBoost é um modelo mais leve para operar em produção e não aparesenta diferença significativa de desempenho.
 
 ## Performance
 
@@ -169,9 +171,9 @@ A melhor performace encontrada foi do  Random Forest Regressor, porém escolhemo
 
 ## 8.0 Avaliação do Algorítimo
 
-Hyperparamenter Fine Tunning:
+Hyperparameter Tunning:
 
-Com o algorítimo XGBoost escolhido na etapa anterior, foi realizada uma análise através do método Randon Search para escolher os melhores valores para cada parâmetro do modelo e encontrar a performance final do XGBoost.
+Nesta etapa foram realizados diversos testes de desempenho a partir das variações de ajustes dos parâmetros do algoritmo, fiz o uso da técnica de Random Search para poder encontrar os melhores ajustes finais. No final a acurácia do XGBoost ficou na melhor posição e pude economizar tempo de dinheiro, já que não foram necessárias máquinas na Cloud para poder executar os testes mais pesados, computacionalmente falando.
 
 Desempenho dos dados de teste:
 
@@ -179,7 +181,8 @@ Desempenho dos dados de teste:
 
 ## 8.1 Tradução e interpretação de erros
 
-Nesta etapa o objetivo foi demonstrar o resultado do projeto, onde avaliamos a performance do modelo com viés de negócio, demonstando o resultado financeiro que pode-se esperar do modelo desenvolvido.
+Nesta etapa o objetivo foi demonstrar o resultado do projeto, onde pude avaliar a performance do modelo com viés voltado ao negócio.<br>
+Aqui apresento o resultado financeiro e as margens de erro do modelo, tanto para o melhor cenário, quanto para o pior cenário. Os valores totais representam a soma de todo o faturamento das lojas para as próximas seis semanas.
 
 ![tuned](./img/perform.png)
 
