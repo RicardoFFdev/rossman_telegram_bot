@@ -1,14 +1,16 @@
+import pickle
 import pandas as pd
 from flask import Flask, Response, request
 from rossmann.Rossmann import Rossmann
+import xgboost as xgb
 
 # Loading model
-model = pickle.load(open('/home/ricardo/repos/cds/6_ds_producao/model/model_rossman.pkl', 'rb'))
+model = pickle.load(open('/home/ricardo/repos/cds/6_ds_producao/model/model_rossmann.pkl', 'rb'))
 
 # Initialize API
 app = Flask(__name__)
 
-@app.route('rossmann/predict', methods=['POST'])
+@app.route('/rossmann/predict', methods=['POST'])
 
 def rossmann_predict():
     test_json = request.get_json()
