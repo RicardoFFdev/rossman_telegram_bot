@@ -107,12 +107,12 @@ def index():
                 return Response('Ok', status=200)
 
             else:
-            send_message(chat_id, 'Store not available')
-            return Response('Ok', status=200)
+                send_message(chat_id, 'Store not available')
+                return Response('Ok', status=200)
     
         else: 
-        send_message(chat_id, 'Store ID is wrong')
-        return Response('Ok', status=200)
+            send_message(chat_id, 'Store ID is wrong')
+            return Response('Ok', status=200)
            
     else:
         return '<h1> Rossmann Telegram BOT </h1>'
