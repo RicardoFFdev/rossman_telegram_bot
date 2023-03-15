@@ -1,3 +1,4 @@
+requests
 pickleshare
 xgboost==1.6.2
 Flask==2.2.3
@@ -5,4 +6,3 @@ inflection==0.5.1
 numpy==1.21.5
 pandas==1.3.5
 scikit-learn==1.0.2
-requests==2.1.1
