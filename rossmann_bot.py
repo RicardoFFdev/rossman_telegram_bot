@@ -13,6 +13,9 @@ TOKEN = '6159590353:AAFHyHeAe1cVU8XIe1Gh-DeRFump5VB5Ico'
 # # Get updates
 # https://api.telegram.org/bot6159590353:AAFHyHeAe1cVU8XIe1Gh-DeRFump5VB5Ico/getUpdates
 
+# Webhook
+# https://api.telegram.org/bot6159590353:AAFHyHeAe1cVU8XIe1Gh-DeRFump5VB5Ico/setWebhook?url=https://api.render.com/deploy/srv-cg8hile4dad531s4mos0?key=kClghMVeqZY
+
 def send_message(chat_id, text):
     url = 'https://api.telegram.org/bot{}'.format(TOKEN)
     url = url + 'sendMessage?chat_id={}'.format(chat_id)
@@ -79,7 +82,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 
 def index():
-    if request.method == 'POST'
+    if request.method == 'POST':
         message = request.get_json
 
         chat_id, store_id = parse_message(message)
