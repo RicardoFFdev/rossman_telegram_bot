@@ -14,7 +14,7 @@ TOKEN = '6159590353:AAFHyHeAe1cVU8XIe1Gh-DeRFump5VB5Ico'
 # https://api.telegram.org/bot6159590353:AAFHyHeAe1cVU8XIe1Gh-DeRFump5VB5Ico/getUpdates
 
 # Webhook
-# https://api.telegram.org/bot6159590353:AAFHyHeAe1cVU8XIe1Gh-DeRFump5VB5Ico/setWebhook?url=https://api.render.com/deploy/srv-cg8hile4dad531s4mos0?key=kClghMVeqZY
+# https://api.telegram.org/bot6159590353:AAFHyHeAe1cVU8XIe1Gh-DeRFump5VB5Ico/setWebhook?url=https://rossmann-bot-0sne.onrender.com
 
 def send_message(chat_id, text):
     url = 'https://api.telegram.org/bot{}'.format(TOKEN)
