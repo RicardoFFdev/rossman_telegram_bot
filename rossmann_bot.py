@@ -2,7 +2,7 @@ import os
 import json
 import requests
 import pandas    as pd
-from flask       import request, Flask, Response
+from   flask     import request, Flask, Response
 
 #constants 6159590353:AAFHyHeAe1cVU8XIe1Gh-DeRFump5VB5Ico
 TOKEN = '6159590353:AAFHyHeAe1cVU8XIe1Gh-DeRFump5VB5Ico'
@@ -83,7 +83,7 @@ app = Flask(__name__)
 
 def index():
     if request.method == 'POST':
-        message = request.get_json
+        message = request.get_json()
 
         chat_id, store_id = parse_message(message)
 
@@ -99,9 +99,9 @@ def index():
                 d2 = d1[['store', 'prediction']].groupby('store').sum().reset_index()
 
                 # Send Message
-                msg = 'Store number {} will sell ${:,.2f} in the next 6 weeks'.format(
-                       d2.loc[x, 'store'].values[0],
-                       d2.loc[x, 'prediction'].values[0])
+                msg = 'Store number {} will sell ${:,.2f} in the next 6 weeks.'.format(
+                            d2['store'].values[0],
+                            d2['prediction'].values[0])
 
                 send_message (chat_id, msg)
                 return Response('Ok', status=200)
@@ -120,7 +120,3 @@ def index():
 if __name__ == '__main__':
     port = os.environ.get('PORT', 5000)
     app.run(host='0.0.0.0', port=port)
-
-
-
-

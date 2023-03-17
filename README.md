@@ -190,3 +190,10 @@ Os valores totais representam a soma de todo o faturamento das lojas para as pr�
 ## Predições do Modelo de Machine Learning
 
 ![pred](./img/predictions.png)
+
+## 9.0 Implementação do bot no Telegram
+
+Neste último passo realizei a implementação de um bot no Telegram para que qualquer usuário com acesso à internet possa solicitar os resultados das predições do modelo de Machine Learning. Este processo é realizado individualmente, ou seja, pode ser solicitada a prediçao por loja única da rede de vendas.<br>
+O bot foi criado dentro da própria plataforma do Telegram e o mesmo foi conectado ao serviço de Cloud do Render. O modelo de predição em Python passa então a operar 24/7.
+
+![telegram_bot](./img/telegram_bot.png)
