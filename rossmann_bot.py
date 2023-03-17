@@ -16,8 +16,11 @@ TOKEN = '6159590353:AAFHyHeAe1cVU8XIe1Gh-DeRFump5VB5Ico'
 # Webhook
 # https://api.telegram.org/bot6159590353:AAFHyHeAe1cVU8XIe1Gh-DeRFump5VB5Ico/setWebhook?url=https://rossmann-bot-0sne.onrender.com
 
+# sendMessage
+# https://api.telegram.org/bot6159590353:AAFHyHeAe1cVU8XIe1Gh-DeRFump5VB5Ico/sendMessage?chat_id=1543189891&text=Testando123!
+
 def send_message(chat_id, text):
-    url = 'https://api.telegram.org/bot{}'.format(TOKEN)
+    url = 'https://api.telegram.org/bot{}/'.format(TOKEN)
     url = url + 'sendMessage?chat_id={}'.format(chat_id)
     r = requests.post(url, json={'text': text})
     print('Status Code {}'.format(r.status_code))
