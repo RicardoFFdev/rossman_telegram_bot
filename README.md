@@ -1,165 +1,165 @@
- <h1 align="center"> Rossmann Sales Forecast </h1>
+<h1 align="center">Rossmann Sales Forecast</h1>
 
 ![Getting Started](./img/rossmann_shop_foto_stralsund.jpg)
 
 
-# Sejam bem-vindos ao meu projeto de portfólio de negócio da empresa Rossmann.
+# Welcome to my Rossmann business portfolio project.
 
 
-## 1.0 O Problema do Negócio
+## 1.0 Business Problem
 
 
-O time de negócios da Rossmann quer estimar o faturamento de cada loja nas próximas seis semanas, com objetivo de identificar quais lojas teriam faturamento suficiente para realizar novos investimentos.
+The Rossmann business team wants to estimate the sales revenue of each store for the next six weeks in order to identify which stores would have enough revenue for new investments.
 
-## 1.1 Contexto do Negócio
+## 1.1 Business Context
 
-Nesse banco de dados iremos encontrar 1.017.209 entradas que datam de 01/01/2013 até 31/07/2015. São dados de mais de 3000 lojas em 7 diferentes países.
+In this database, we will find 1,017,209 entries dating from 01/01/2013 to 07/31/2015. These are data from over 3000 stores in 7 different countries.
 
-## 1.2 Entendimento e Desafio do Problema de Negócio
+## 1.2 Understanding and Business Problem Challenge
 
-Com milhares de gerentes individuais prevendo vendas com base em seu ambiente de trabalho, a precisão dos resultados podem sofrer muitas variações e, isso prejudicaria na tomada de decisão do time de negócios.<br>
-Diante dessa situação o time de dados ficou encarregado de analisar e desenvolver uma solução que seja viável para toda a rede de atendimento. 
-
-
-## 2. Planejamento prévio
-
-### Método CRISP-DS
-
-![Crisp](./img/ciclo.png)
+With thousands of individual managers predicting sales based on their work environment, the accuracy of the results can vary greatly, which would hinder the business team's decision-making process. The data team has been tasked with analyzing and developing a solution that is feasible for the entire network of stores.
 
 
-## 2.1 Ferramentas, IDE's e Bibliotecas
+## 2. Preparatory Planning
+
+### CRISP-DM Method
+
+![Crisp](./img/crisp.jpg)
+
+
+## 2.1 Tools, IDEs, and Libraries
 
 * Python 3.10
 * Visual Studio Code
 * Jupyter Notebook
 * PyCharm Community Ed.
-* Bibliotecas: Seaborn, Plotly, Plotly Express, Pandas, Numpy, Pickle, Streamlit, Boruta, XGBoost, SKLearn e MatPlotLib
-* Deploy final Streamlit Web Apps
+* Libraries: Seaborn, Plotly, Plotly Express, Pandas, Numpy, Pickle, Streamlit, Boruta, XGBoost, SKLearn, and Matplotlib
+* Final deployment using Streamlit Web Apps
 
-## 2.2 Produto final
+## 2.2 Final Product
 
-* Solucionar Insights.
-* Desenvolver uma solução de predição de vendas. Esta, deve ser rápida e prática, podendo ser acessada de qualquer lugar e de qualquer dispositivo conectado a internet.
-
-
-## 3.0 Estudo do negócio
+* Provide insights.
+* Develop a sales prediction solution that is fast and practical, accessible from anywhere and any internet-connected device.
 
 
-As lojas da rede alemã Rossmann, que vendem itens de higiene, comidinhas, coisas para casa, roupas básicas e bebidas, são a companheira para todas as horas de quem viaja para a Alemanha. Filiais estão na estação de metrô e trens de Hannover e pelas ruas. A versão express funciona até tarde da noite. Os preços são motivo extra para entrar a cada passada. Ir a Alemanha e não entrar em uma Rossmann e como não ir à maior economia europeia.
-
-**Fonte:** [ Jornal do Comércio ](https://www.jornaldocomercio.com/_conteudo/especiais/hannover_messe_2019/2019/04/678068-dicas-de-hannover.html)
+## 3.0 Business Study
 
 
-## 4.0 Dados
+The stores of the German network Rossmann, which sell hygiene items, snacks, household goods, basic clothing, and beverages, are the companion for all hours for those traveling to Germany. Branches are located in the subway and train stations of Hannover and throughout the streets. The express version operates until late at night. The prices are an extra reason to enter with every step. Going to Germany and not entering a Rossmann is like not going to the largest European economy.
+
+**Source:** [Jornal do Comércio](https://www.jornaldocomercio.com/_conteudo/especiais/hannover_messe_2019/2019/04/678068-dicas-de-hannover.html)
 
 
-##### Estes são dados públicos que foram coletados na página web do [Kaggle](https://www.kaggle.com/c/rossmann-store-sales).
+## 4.0 Data
 
-## 4.1 Atributos de origem
 
- Abaixo segue a descrição para cada um dos 15 atributos:<br><br>
-| **Atributos**         |  **Descrição**  |
+##### This data is publicly available and was collected from the [Kaggle](https://www.kaggle.com/c/rossmann-store-sales) webpage.
+
+## 4.1 Source Attributes
+
+Below is the description for each of the 15 attributes:
+
+| **Attribute**         |  **Description**  |
 | ----------------------|------------------------------------------------------------------------------------------|
-|  id                   | um Id que representa um (Store, Date) concatenado dentro do conjunto de teste |
-|  Store                |  um id único para cada loja |
-|  Sales                |  o volume de vendas em um determinado dia |
-|  Customers            |  o número de clientes em um determinado dia |
-|  Open                 |  um indicador para saber se a loja estava aberta: 0 = fechada, 1 = aberta |
-|  StateHoliday         |  indica um feriado estadual. Normalmente todas as lojas, com poucas exceções, fecham nos feriados estaduais. Observe que todas as escolas fecham nos feriados e finais de semana. a = feriado, b = feriado da Páscoa, c = Natal, 0 = Nenhum |
-| SchoolHoliday         |  indica se (Store, Date) foi afetada pelo fechamento de escolas públicas |
-|  StoreType            |  diferencia entre 4 modelos de loja diferentes: a, b, c, d |
-|  Assortment           |  descreve um nível de sortimento: a = básico, b = extra, c = estendido |
-|  CompetitionDistance  |  distância em metros até a loja concorrente mais próxima |
-|  CompetitionOpenSince |  apresenta o ano e mês aproximados em que o concorrente mais próximo foi aberto |
-|  Promo                |  indica se uma loja está fazendo uma promoção naquele dia |
-|  Promo2               |  Promo2 é uma promoção contínua e consecutiva para algumas lojas: 0 = a loja não está participando, 1 = a loja está participando |
-|  Promo2Since          |  descreve o ano e a semana em que a loja começou a participar da Promo2 |
-|  PromoInterval        | descreve os intervalos consecutivos de início da promoção 2, nomeando os meses em que a promoção é iniciada novamente. Por exemplo. "Fev, maio, agosto, novembro" significa que cada rodada começa em fevereiro, maio, agosto, novembro de qualquer ano para aquela loja |
+|  id                   | an Id representing a (Store, Date) concatenated within the test set |
+|  Store                | a unique id for each store |
+|  Sales                | the sales volume on a given day |
+|  Customers            | the number of customers on a given day |
+|  Open                 | an indicator to know if the store was open: 0 = closed, 1 = open |
+|  StateHoliday         | indicates a state holiday. Typically, all stores, with a few exceptions, are closed on state holidays. Note that all schools are closed on public holidays and weekends. a = public holiday, b = Easter holiday, c = Christmas, 0 = None |
+| SchoolHoliday         | indicates if (Store, Date) was affected by the closure of public schools |
+|  StoreType            | differentiates between 4 different store models: a, b, c, d |
+|  Assortment           | describes the level of assortment: a = basic, b = extra, c = extended |
+|  CompetitionDistance  | distance in meters to the nearest competing store |
+|  CompetitionOpenSince | approximates the year and month when the nearest competitor was opened |
+|  Promo                | indicates if a store is running a promotion on that day |
+|  Promo2               | Promo2 is a continuous and consecutive promotion for some stores: 0 = the store is not participating, 1 = the store is participating |
+|  Promo2Since          | describes the year and week when the store started participating in Promo2 |
+|  PromoInterval        | describes the consecutive intervals when Promo2 is started again, naming the months in which the promotion starts. For example, "Feb, May, Aug, Nov" means that each round starts in February, May, August, November of any year for that store |
 
-## 4.2 Atributos criados
+## 4.2 Created Attributes
 
-* competition_open_since_month -> A quantidade de meses desde de que uma loja competidora próxima foi aberta.
-* competition_open_since_year -> A quantidade de anos desde de que uma loja competidora próxima foi aberta.
-* promo2_since_week -> A quantidade de semanas desde a última promoção categoria 2.
-* promo2_since_year -> A quantidade de anos desde a última promoção categoria 2.
-* promo_interval -> O intervalo entre promoções na mesma loja
-* month_map -> Mapeamento dos meses 1: 'Jan', 2: 'Fev', 3: 'Mar', 4: 'Apr', 5: 'May', 6: 'Jun', 7: 'Jul', 8: 'Aug', 9: 'Sep', 10: 'Oct', 11: 'Nov' e 12: 'Dec'
+* competition_open_since_month -> The number of months since a nearby competing store was opened.
+* competition_open_since_year -> The number of years since a nearby competing store was opened.
+* promo2_since_week -> The number of weeks since the last Promo2 promotion.
+* promo2_since_year -> The number of years since the last Promo2 promotion.
+* promo_interval -> The interval between promotions at the same store.
+* month_map -> Mapping of months: 1: 'Jan', 2: 'Feb', 3: 'Mar', 4: 'Apr', 5: 'May', 6: 'Jun', 7: 'Jul', 8: 'Aug', 9: 'Sep', 10: 'Oct', 11: 'Nov', and 12: 'Dec'
 
-## 4.3 Mapa Mental para Criação de Hipóteses/Insights
+## 4.3 Mind Map for Hypothesis/Insights Creation
 
 ![MindMap](./img/mind_map_hypothesis.png)
 
-## 5.0 Premissas
+## 5.0 Assumptions
 
+- For stores that had no information on 'Competition Distance', the largest observed distance in the dataset was considered.
+- Only stores with sales values greater than 0 were considered.
+- Days when stores are closed were excluded from the analysis.
 
-- Para as lojas que não possuíam informações de 'Competition Distance', foi considerado a maior distância observada no conjunto de dados.
-- Foram consideradas apenas lojas com valores de venda maior que 0.
-- Os dias em que as lojas estão fechadas foram retiradas da análise.
+## 6.0 Key Insights
 
+### 1. Do stores with a larger assortment sell more?
 
-## 6.0 Principais Insights
-
-
-### 1. Lojas com maior sortimentos vendem mais?
-
--> A hipótese é FALSA. As lojas que possuem maior sortimento VENDEM MENOS no geral.
+-> The hypothesis is FALSE. Stores with a larger assortment actually SELL LESS overall.
 
 ![h1](./img/h1barplot.png)
 
-### 2. Lojas com competidores mais próximos vendem menos?
--> A hipótese é FALSA. Lojas com COMPETIDORES MAIS PRÓXIMOS VENDEM MAIS.
+### 2. Do stores with closer competitors sell less?
+
+-> The hypothesis is FALSE. Stores with CLOSER COMPETITORS actually SELL MORE.
 
 ![h2](./img/h2plot.png)
 
-### 3. Lojas com competidores há mais tempo vendem mais?
-->  A hipótese é FALSA. Lojas com competidores há mais tempo VENDEM MENOS.
+### 3. Do stores with competitors open for a longer time sell more?
+
+-> The hypothesis is FALSE. Stores with competitors open for a longer time actually SELL LESS.
 
 ![h3](./img/h3plot.png)
 
-### 4. Lojas com promoções ativas por mais tempo vendem mais?
--> A hipótese é FALSA. Depois de um certo período de promoção as lojas passam a vender MENOS.
+### 4. Do stores with longer active promotions sell more?
+
+-> The hypothesis is FALSE. After a certain period of promotion, stores start to sell LESS.
 
 ![h4](./img/h4plot.png)
 
-### 5. Lojas com promoções consecutivas vendem mais?
--> A hipótese é FALSA. As lojas com promoções consecutivas vendem MENOS.
+### 5. Do stores with consecutive promotions sell more?
+
+-> The hypothesis is FALSE. Stores with consecutive promotions actually sell LESS.
 
 ![h5](./img/h5plot.png)
 
-### 6. Lojas abertas durante o feriado do Natal vendem mais?
--> A hipótese é FALSA. As lojas abertas durante o feriado do Natal vendem MENOS.
+### 6. Do stores open during the Christmas holiday sell more?
+
+-> The hypothesis is FALSE. Stores open during the Christmas holiday actually sell LESS.
 
 ![h6](./img/h6plot.png)
 
-### 7. As lojas estão vendendo mais ao longo dos anos?
--> A hipótese é FALSA. As vendas estão diminuindo ao longo dos anos.
+### 7. Are stores selling more over the years?
+
+-> The hypothesis is FALSE. Sales are decreasing over the years.
 
 ![h7](./img/h7plot.png)
 
-### 8. Lojas vendem menos nos finais de semana?
--> A hipótese é VERDADEIRA. As lojas vendem MENOS nos finais de semana.
+### 8. Do stores sell less on weekends?
+
+-> The hypothesis is TRUE. Stores sell LESS on weekends.
 
 ![h8](./img/h9plot.png)
 
-### 9. Lojas vendem mais depois do 10º dia do mês?
--> A hipótese é VERDADEIRA. As lojas vendem MAIS depois do 10º do mês.
+### 9. Do stores sell more after the 10th day of the month?
+
+-> The hypothesis is TRUE. Stores sell MORE after the 10th day of the month.
 
 ![h9](./img/h9plot.png)
 
 
-## 7.0 Modelagem dos dados
+## 7.0 Data Modeling
 
-Nesta etapa, os dados foram preparados para o início das aplicações dos modelos de Machine Learning.<br>
-Foram utilizadas técnicas de Rescaling e Transformation, através de encodings e nature transformation. O pacote Boruta foi aplicado para direcionar quais são os melhores atributos e, dessa maneira, treinar o melhor modelo afim de se obter uma melhor acurácia.
+In this stage, the data was prepared for the implementation of Machine Learning models. Rescaling and transformation techniques were used, including encodings and nature transformation. The Boruta package was applied to identify the best attributes and train the best model to achieve higher accuracy.
 
 ## 7.1 Machine Learning Modeling
 
-Nesse processo de escolha de modelos de Machine Learning, foram relizados testes e treinamentos com cinco deles, são os seguintes: Random Forest Regressor, XGBoost Regressor, Linear Regression (Lasso), Linear Regression e Average Model.<br>
-Utilizei o Average Model como base para fazer comparações com os demais modelos.<br>
-Apliquei a técnica de Cross Validation para garantir a performance real sobre os dados selecionados.<br>
-Em termos de performance, o Random Forest Regressor se saiu melhor, todavia, eu escolhi o modelo XGBoost Regressor.<br>
-A razão dessa escolha é que o XGBoost é um modelo mais leve para operar em produção e não aparesenta diferença significativa de desempenho.
+In this process of choosing Machine Learning models, tests and training were performed with five models: Random Forest Regressor, XGBoost Regressor, Linear Regression (Lasso), Linear Regression, and Average Model. I used the Average Model as a baseline to compare with the other models. Cross-validation technique was applied to ensure real performance on the selected data. In terms of performance, the Random Forest Regressor performed the best. However, I chose the XGBoost Regressor as the final model. The reason for this choice is that XGBoost is a lighter model to operate in production and does not show a significant difference in performance.
 
 ## Performance
 
@@ -169,31 +169,27 @@ A razão dessa escolha é que o XGBoost é um modelo mais leve para operar em pr
 
 ![cv](./img/cv_performance.png)
 
-## 8.0 Avaliação do Algorítimo
+## 8.0 Algorithm Evaluation
 
-Hyperparameter Tunning:
+Hyperparameter Tuning:
 
-Aqui eu realizei diversos testes de desempenho a partir das variações de ajustes dos parâmetros do algoritmo, fiz o uso da técnica de Random Search para poder encontrar os melhores ajustes finais. No final a acurácia do XGBoost ficou na melhor posição e pude economizar tempo de dinheiro, já que não foram necessárias máquinas na Cloud para poder executar os testes mais pesados, computacionalmente falando.
+Here, I conducted several performance tests by adjusting the algorithm's parameters. I used the Random Search technique to find the best final settings. In the end, XGBoost's accuracy was in the best position, allowing me to save time and money as I did not need heavy computational resources like cloud computing instances for running more resource-intensive tests.
 
-Desempenho dos dados de teste:
+Test Data Performance:
 
 ![finetune](./img/xgb_tuned.png)
 
-## 8.1 Tradução e interpretação de erros
+## 8.1 Translation and Interpretation of Errors
 
-Chegamos então a demonstração do resultado final do projeto. Avaliei a performance do modelo com viés voltado ao negócio.<br>
-Aqui apresento o resultado financeiro e as margens de erro do modelo, tanto para o melhor cenário, quanto para o pior cenário.<br>
-Os valores totais representam a soma de todo o faturamento das lojas para as próximas seis semanas.
+Now, I present the final results of the project, evaluating the model's performance with a business perspective. Here, I present the financial outcome and the model's error margins for both the best-case scenario and the worst-case scenario. The total values represent the sum of all store sales for the next six weeks.
 
 ![tuned](./img/perform.png)
 
-## Predições do Modelo de Machine Learning
+## Machine Learning Model Predictions
 
 ![pred](./img/predictions.png)
 
-## 9.0 Implementação do bot no Telegram
-
-Neste último passo realizei a implementação de um bot no Telegram para que qualquer usuário com acesso à internet possa solicitar os resultados das predições do modelo de Machine Learning. Este processo é realizado individualmente, ou seja, pode ser solicitada a prediçao por loja única da rede de vendas.<br>
-O bot foi criado dentro da própria plataforma do Telegram e o mesmo foi conectado ao serviço de Cloud do Render. O modelo de predição em Python passa então a operar 24/7.
+In this final step, I implemented a Telegram bot that allows any user with internet access to request predictions from the Machine Learning model. This process is done individually, meaning that predictions can be requested for each individual store in the sales network. The bot was created within the Telegram platform and connected to the Render Cloud service. The prediction model in Python is now operational 24/7.
 
 ![telegram_bot](./img/telegram_bot.png)
+
